@@ -188,7 +188,7 @@ Total Compilation time = 0.00804090499878 seconds
 
 And then verifies that the compiled gadgets have correct outputs; mainly it verifies that :
 
-* For G<sub>add</sub><sup>(k)</sup> : <img src="https://latex.codecogs.com/svg.latex?\sum_{i=0}^{n^k - 1}c_i = \sum_{i=0}^{n^k - 1}a_i + \sum_{i=0}^{n^k - 1}b_i"/>
+* For G<sub>add</sub><sup>(k)</sup> : <img src="https://latex.codecogs.com/svg.latex?\sum_{i=0}^{n^k%20-%201}c_i%20=%20\sum_{i=0}^{n^k%20-%201}a_i%20+%20\sum_{i=0}^{n^k%20-%201}b_i"/>
 
 * For G<sub>copy</sub><sup>(k)</sup> :   <img src="https://latex.codecogs.com/svg.latex?\sum_{i=0}^{n^k - 1}d_i = \sum_{i=0}^{n^k - 1}a_i"/>and  <img src="https://latex.codecogs.com/svg.latex?\sum_{i=0}^{n^k - 1}e_i = \sum_{i=0}^{n^k - 1}a_i"/>
 * For G<sub>mult</sub><sup>(k)</sup> :  <img src="https://latex.codecogs.com/svg.latex?\sum_{i=0}^{n^k - 1}c_i = \sum_{i=0}^{n^k - 1}a_i * \sum_{i=0}^{n^k - 1}b_i" title="eq1" />
