@@ -194,7 +194,7 @@ And then verifies that the compiled gadgets have correct outputs; mainly it veri
 
 * For G<sub>add</sub><sup>(k)</sup> : <img src="https://latex.codecogs.com/svg.latex?\sum_{i=0}^{n^k%20-%201}c_i%20=%20\sum_{i=0}^{n^k%20-%201}a_i%20+%20\sum_{i=0}^{n^k%20-%201}b_i"/>
 
-* For G<sub>copy</sub><sup>(k)</sup> :   <img src="https://latex.codecogs.com/svg.latex?\sum_{i=0}^{n^k%20-%201}d_i%20=%20\sum_{i=0}^{n^k%20-%201}a_i"/>and  <img src="https://latex.codecogs.com/svg.latex?\sum_{i=0}^{n^k - 1}e_i = \sum_{i=0}^{n^k - 1}a_i"/>
+* For G<sub>copy</sub><sup>(k)</sup> :   <img src="https://latex.codecogs.com/svg.latex?\sum_{i=0}^{n^k%20-%201}d_i%20=%20\sum_{i=0}^{n^k%20-%201}a_i"/>and  <img src="https://latex.codecogs.com/svg.latex?\sum_{i=0}^{n^k%20-%201}e_i%20=%20\sum_{i=0}^{n^k%20-%201}a_i"/>
 * For G<sub>mult</sub><sup>(k)</sup> :  <img src="https://latex.codecogs.com/svg.latex?\sum_{i=0}^{n^k%20-%201}c_i%20=%20\sum_{i=0}^{n^k%20-%201}a_i%20*%20\sum_{i=0}^{n^k%20-%201}b_i"/>
 
 where the index $i$ specifies the share index of the variable. If any of the above verifications is incorrect, it probably means that there is an error in one or more of the base gadgets  G<sub>add</sub>, G<sub>copy</sub>  and G<sub>mult</sub>.
