@@ -1,3 +1,4 @@
+# coding=utf-8
 ###############################################################################
 #
 # Implementation of Expanding Circuit Compiler in SageMath
@@ -40,10 +41,10 @@ import math
 import argparse
 import os
 
-from addition import *
-from copy import *
-from multiplication import *
-from variables import *
+from addition_f import *
+from copy_f import *
+from multiplication_f import *
+from variables_f import *
 
 
 ##############################################################################

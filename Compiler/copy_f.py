@@ -1,3 +1,4 @@
+# coding=utf-8
 ###############################################################################
 #
 # Implementation of Expanding Circuit Compiler in SageMath
@@ -31,9 +32,22 @@
 
 import copy
 
-from addition import *
-from variables import *
+from addition_f import *
+from variables_f import *
 
+
+##############################################################################
+#
+# update_copy_dict
+#
+# 	INPUTS:
+#		- info_dict: current circuit that is being compiled
+#
+#	OUTPUT:
+#		- Updates the copy gates necessary in the gadget's dict info_dict
+#          for all the variables
+#
+##############################################################################
 def update_copy_dict(info_dict):
     
     copy_d = dict()
@@ -62,6 +76,25 @@ def update_copy_dict(info_dict):
             
     info_dict["copies"] = copy_d
 
+
+
+##############################################################################
+#
+# copy_var
+#
+# 	INPUTS:
+#		- inp, out1, out2: str for variables names 
+#                           (out1 and out2 are the output copies of inp)
+#        - copy_gadget: copy gadget's python dict created 
+#                           using the function read_gadget
+#        - random_suffix: string to suffix random variables names with
+#
+#	OUTPUT:
+#		- replacement: instructions from copy_gadget_dict necessary
+#                       to create the copies out1 and out2 of inp
+#        - randoms: random variables that are neccesary to create the copies
+#
+##############################################################################
 def copy_var(inp, out1, out2, copy_gadget, random_suffix, nb_shares):    
     gad_inp = copy_gadget["inputs"][0]
     gad_out1 = copy_gadget["outputs"][0]
@@ -107,6 +140,23 @@ def copy_var(inp, out1, out2, copy_gadget, random_suffix, nb_shares):
 
 
 
+##############################################################################
+#
+# copy_var_n_times
+#
+# 	INPUTS:
+#		- v: variable name to be copied n times
+#        - copy_gadget: copy gadget's python dict created 
+#                           using the function read_gadget
+#        - random_suffix: string to suffix random variables names with
+#        - n: number of copies of v
+#
+#	OUTPUT:
+#		- instructions: instructions from copy_gadget_dict necessary
+#                       to create the copies n copies of v
+#        - randoms_to_add: random variables that are neccesary to create the copies
+#
+##############################################################################
 def copy_var_n_times(v, copy_gadget, random_suffix, nb_shares, n, indice):
     instructions = []
     randoms_to_add = []

@@ -1,3 +1,4 @@
+# coding=utf-8
 ###############################################################################
 #
 # Implementation of Expanding Circuit Compiler in SageMath
@@ -32,14 +33,25 @@
 import copy
 import math
 
+from addition_f import *
+from copy_f import *
+from variables_f import *
 
-
-from addition import *
-from copy import *
-from variables import *
-
-######################################## Replaces mult_instruction by the multiplication gadget mult_gadget_dict ########################################
-# mult_instruction should be in the format string "c = a * b"
+##############################################################################
+#
+# replace_mult_instruction
+#
+# 	INPUTS:
+#		- mult_instruction: string in the format "out = inp1 * inp2"
+#        - mult_gadget_dict: multiplication gadget's python dict created 
+#                           using the function read_gadget
+#        - random_suffix: string to suffix random variables names with
+#
+#	OUTPUT:
+#		- replacement: instructions from mult_gadget_dict to replace
+#                       mult_instruction with during the compilation
+#
+##############################################################################
 def replace_mult_instruction(mult_instruction, mult_gadget_dict, nb_shares, random_suffix):
     
     args = mult_instruction.split()

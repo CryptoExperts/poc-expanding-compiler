@@ -1,3 +1,4 @@
+# coding=utf-8
 ###############################################################################
 #
 # Implementation of Expanding Circuit Compiler in SageMath
@@ -32,6 +33,20 @@
 import copy
 
 
+##############################################################################
+#
+# replace_variables
+#
+# 	INPUTS:
+#		- gadget: gadget circuit that is being compiled
+#        - nb_inputs, nb_outputs: number of inputs/outputs of the gadget
+#
+#	OUTPUT:
+#		- rewrites the gadget instructions by replacing all intermediate 
+#          variables names by "var#" where # is an incremented index, and 
+#          every "var#" is unique
+#
+##############################################################################
 def replace_variables(gadget, nb_inputs, nb_outputs):
     random_counter = 0
     inp1_counter = 0

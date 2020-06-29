@@ -1,3 +1,4 @@
+# coding=utf-8
 ###############################################################################
 #
 # Implementation of Expanding Circuit Compiler in SageMath
@@ -40,6 +41,21 @@ import math
 import argparse
 import os
 
+
+##############################################################################
+#
+# verify
+#
+# 	INPUTS:
+#		- circuit_file: file that contains the circuit's sage pseudo-code
+#
+#	OUTPUT:
+#		- verifies that the circuit outputs the correct value, depending on
+#           the circuit's functionality (addition, copy or multiplication).
+#           This function is used at the end of the compilation to verify
+#           that the output compiled gadgets are correct
+#
+##############################################################################
 def verify(circuit_file):
     #result output circuit file after modification
     output_pol_ring = open("sage_tmp2_numpy.sage", "w")

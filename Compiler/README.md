@@ -21,13 +21,13 @@ This repository contains the code of the Expanding Circuit Compiler implemented 
 Using the compiler requires having [SageMath](http://www.sagemath.org/) installed and Python (3 or higher). The main function of the tool is in the file `Compiler.sage`. To get all options, run the following command:
 
 ```
-sage Compiler.sage -h
+sage compiler.sage -h
 ```
 
 This outputs :
 
 ```
-usage: Compiler.sage.py [-h] [-c_type C_TYPE]
+usage: compiler.sage.py [-h] [-c_type C_TYPE]
                         Add_gadget Copy_gadget Mult_gadget k
 
 positional arguments:

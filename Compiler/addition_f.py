@@ -1,3 +1,4 @@
+# coding=utf-8
 ###############################################################################
 #
 # Implementation of Expanding Circuit Compiler in SageMath
@@ -32,11 +33,25 @@
 import copy
 import math
 
-from copy import *
-from variables import *
+from copy_f import *
+from variables_f import *
 
-######################################## Replaces add_instruction by the addition gadget add_gadget_dict ########################################
-# add_instruction should be in the format string "c = a + b"
+
+##############################################################################
+#
+# replace_add_instruction
+#
+# 	INPUTS:
+#		- add_instruction: string in the format "out = inp1 + inp2"
+#        - add_gadget_dict: add gadget's python dict created 
+#                           using the function read_gadget
+#        - random_suffix: string to suffix random variables names with
+#
+#	OUTPUT:
+#		- replacement: instructions from add_gadget_dict to replace
+#                       add_instruction with during the compilation
+#
+##############################################################################
 def replace_add_instruction(add_instruction, add_gadget_dict, nb_shares, random_suffix):
     
     args = add_instruction.split()
