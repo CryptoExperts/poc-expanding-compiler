@@ -13,7 +13,7 @@ The program is designed to compile n​-share base gadgets G<sub>add</sub>, G<su
 This repository contains the code of the Expanding Circuit Compiler implemented in SageMath and Python3:
 
 - **compiler.sage:** contains the main program that runs the tool and the main compilation function.
-- **{addition, copy, multiplication, variables}.py:** contains different functions that are needed for the compilation.
+- **{addition, copy, multiplication, variables}_f.py:** contains different functions that are needed for the compilation.
 - **verify_compilation.py:** contains the program that verifies the correctness of the resulting compiled gadgets.
 
 ## Usage
