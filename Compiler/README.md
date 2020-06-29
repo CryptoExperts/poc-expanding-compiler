@@ -296,6 +296,6 @@ void Add_gadget_function(uint8_t * a, uint8_t * b, uint8_t * c){
 }
 ```
 
-## License 
+## License
 
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html)
