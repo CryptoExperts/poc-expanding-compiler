@@ -33,10 +33,10 @@
 #include <unistd.h>
 #include <sys/time.h>
 
-#include "gf256.h"
-#include "aes128.h"
-#include "gadgets.h"
-#include "aes128_sharing.h"
+#include "./aes_files/gf256.h"
+#include "./aes_files/aes128.h"
+#include "./aes_files/gadgets.h"
+#include "./aes_files/aes128_sharing.h"
 
 double my_gettimeofday(){
   struct timeval tmp_time;

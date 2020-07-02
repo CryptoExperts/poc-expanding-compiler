@@ -13,6 +13,9 @@ It is a compiled program that uses for basic operations, gadgets  G<sub>add</sub
 This repository contains the code of the protected AES-128 implemented in C:
 
 * __main.c:__ contains the main function that executes the AES-128 encryption and decryption algorithms.
+
+In **aes_files** folder:
+
 * __aes128.h, aes128.c:__ contains a standard implementation of the AES-128 algorithm to compare with the protected n-share implemented version.
 * __aes128_sharing.h, aes128_sharing.c:__ contains the protected implementation of the n-share AES-128 algorithm.
 * __gadgets.h, gadgets.c:__ contains the three n-share gadgets functions (add, copy, mult), as well as the n-share variables generation and compression functions.
