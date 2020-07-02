@@ -71,21 +71,23 @@ def verify(circuit_file):
             Mut = True
             break
     
+    if("ORDER" in lines[0]):
+        lines = lines[1:]
     #Copying first 5 files for ORDER, SHARES, IN, RANDOMS, OUT in the specified order
-    nb_shares = int(lines[1].split()[1])
-        
-    inputs = lines[2].split()[1:]
-    nb_shares = int(lines[1].split()[1])
-    outputs = lines[4].split()[1:]
+    nb_shares = int(lines[0].split()[1])
+
+    inputs = lines[1].split()[1:]
+
+    outputs = lines[3].split()[1:]
     
     #Writing Sage_tmp2 File for polynomial Ring
-    varss = lines[2].split()[1:]
+    varss = lines[1].split()[1:]
     for v in varss:
         for i in range(nb_shares):
             output_pol_ring.write(v+str(i)+",")
     
     #RANDOMS with _
-    args = lines[3].split()
+    args = lines[2].split()
     tmp = 0
     for r in args[1:-1]:
         output_pol_ring.write(r+",")

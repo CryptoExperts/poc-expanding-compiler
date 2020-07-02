@@ -13,6 +13,9 @@ The program is designed to compile n​-share base gadgets G<sub>add</sub>, G<su
 This repository contains the code of the Expanding Circuit Compiler implemented in SageMath and Python3:
 
 - **compiler.sage:** contains the main program that runs the tool and the main compilation function.
+
+In **intermdiate_files** folder:
+
 - **{addition, copy, multiplication, variables}_f.py:** contains different functions that are needed for the compilation.
 - **verify_compilation.py:** contains the program that verifies the correctness of the resulting compiled gadgets.
 
@@ -67,7 +70,6 @@ If the parameter `c_type` is specified, then the resulting gadgets are also save
 Input gadget files have to be sage files in the following format :
 
 ```
-#ORDER 1
 #SHARES 2
 #IN a b
 #RANDOMS r0
@@ -87,7 +89,6 @@ d1 = c1 + tmp
 
 Above is an example of the ISW​ multiplication gadget with 2 shares. 
 
-* `#ORDER 1`  is the order of the gadget (1-Probing secure)
 * `#SHARES 2` is the number of shares used in the gadget
 * `#IN a b` are the input variables of the gadget
 * `#RANDOMS r0` are all of the random variables used in the gadget
@@ -214,7 +215,6 @@ without any error message.
 For example, this is what the file `Add_compiled_gadget_k2.sage` contains :
 
 ```
-#ORDER 1
 #SHARES 4
 #IN a b 
 #RANDOMS r0 r2 r7 r6 r3 r5 r4 r1 

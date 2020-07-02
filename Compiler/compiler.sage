@@ -41,6 +41,9 @@ import math
 import argparse
 import os
 
+
+sys.path.insert(0, os.getcwd()+"/intermediate_files")
+
 from addition_f import *
 from copy_f import *
 from multiplication_f import *
@@ -65,15 +68,18 @@ def read_gadget(gadget_filename):
     lines = gadget.readlines()
     gadget.close()
     
+    if("ORDER" in lines[0]):
+        lines = lines[1:]
+    
     info_dict = dict()
-    info_dict["inputs"] = lines[2].split()[1:]             
-    info_dict["nb_shares"] = int(lines[1].split()[1])    
-    info_dict["outputs"] = lines[4].split()[1:]             
-    info_dict["randoms"] = lines[3].split()[1:]             
+    info_dict["inputs"] = lines[1].split()[1:]             
+    info_dict["nb_shares"] = int(lines[0].split()[1])    
+    info_dict["outputs"] = lines[3].split()[1:]             
+    info_dict["randoms"] = lines[2].split()[1:]             
     
     used_out_var = dict()
     var_counter = 0
-    lines = lines[5:]
+    lines = lines[4:]
     
     ################ Loop to read all the instructions in the gadget file ################
     for i in range(len(lines)):
@@ -409,7 +415,7 @@ def main():
     #################################### For Mult Gadgets, Verify that on inputs a, b and output c,         sum(c_i) = sum(a_i) * sum(b_i)
     
     print("\nVerifying that outputs of compiled gadgets are correct...\n")
-    load("verify_compilation.sage")
+    load("./intermediate_files/verify_compilation.sage")
     a = verify(directory+"add_compiled_gadget_k"+str(args.k)+".sage")
     b = verify(directory+"copy_compiled_gadget_k"+str(args.k)+".sage")
     c = verify(directory+"mult_compiled_gadget_k"+str(args.k)+".sage")
